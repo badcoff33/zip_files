@@ -1,0 +1,20 @@
+{
+  "name": "Phyton",
+  "cmd": "python.exe",
+  "args": ["make_zip.py"],
+  "sh": false,
+  "cwd": "{PROJECT_PATH}",
+  "errorMatch": ["File +\"(?<file>[_\\-\\.:\\w\\\\]+)\", line (?<line>\\d+)"],
+  "targets": {
+    "Test case 1: input file missing": {
+      "cmd": "python.exe",
+      "sh": false,
+      "args": ["make_zip.py", "--verbose", "--files", "file_a.txt", "file_b"]
+    },
+    "Test case 2: good": {
+      "cmd": "python.exe",
+      "sh": false,
+      "args": ["make_zip.py", "--verbose", "--files", "file_a.txt", "file_b.txt"]
+    }
+  }
+}
